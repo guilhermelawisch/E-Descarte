@@ -8,7 +8,7 @@ Install Tailwind CSS
 'npm install tailwindcss @tailwindcss/cli'
 
 Start the Tailwind CLI build process
-'npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch'
+'npx @tailwindcss/cli -i ./src/styles/input.css -o ./src/styles/output.css --watch'
 
 git add .
 git commit -m "nome do commit"
