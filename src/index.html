@@ -8,20 +8,22 @@
       <link href="./styles/output.css" rel="stylesheet" />
       <title>E-Descarte</title>
     </head>
-    <body>
+    <body class="bg-background">
       <header
         class="bg-green-dark text-white grid grid-cols-2 px-20 h-20 items-center self-center"
       >
-        <div class="flex flex-row flex-auto">
-          <img
-            src="./assets/icons/lixeira.svg"
-            alt="imagem lixeira"
-            width="48"
-          />
-          <h1 class="text-3xl font-bold items-center self-center">
-            E-Descarte
-          </h1>
-        </div>
+        <a href="./index.html">
+          <div class="flex flex-row flex-auto">
+            <img
+              src="./assets/icons/lixeira.svg"
+              alt="imagem lixeira"
+              width="48"
+            />
+            <h1 class="text-3xl font-bold items-center self-center">
+              E-Descarte
+            </h1>
+          </div>
+        </a>
         <div>
           <nav>
             <ul class="flex flex-row justify-evenly">
@@ -42,10 +44,14 @@
         </div>
       </header>
       <main>
-        <section>
-          <div>
-            <h2>Descarte o velho <span>sem descartar o amanhã.</span>​</h2>
-            <p>
+        <section class="grid grid-cols-2 justify-center items-center">
+          <div class="text-center">
+            <h2 class="text-5xl font-semibold leading-14">
+              Descarte o velho
+              <span class="text-green-span">sem descartar o amanhã.</span>​
+            </h2>
+            <br />
+            <p class="text-xl leading-10">
               A inovação não precisa vir acompanhada do impacto ambiental. O
               verdadeiro progresso acontece quando fechamos o ciclo de consumo
               com responsabilidade: destinando o lixo eletrônico para postos de
@@ -55,24 +61,26 @@
             </p>
           </div>
           <div>
-            <img src="/src/assets/images/lixo.png" alt="lixo" />
+            <img src="./assets/images/lixo.png" alt="lixo" />
           </div>
         </section>
-        <section>
+        <section
+          class="grid grid-cols-4 justify-center items-center text-center bg-green-dark text-white h-30"
+        >
           <div>
-            <p>3%</p>
+            <p class="text-yellow-300 font-semibold text-3xl">3%</p>
             <p>Reciclado de forma correta​</p>
           </div>
           <div>
-            <p>57 toneladas​</p>
+            <p class="text-yellow-300 font-semibold text-3xl">57 toneladas​</p>
             <p>Produzidas em 2019​</p>
           </div>
           <div>
-            <p>11,4 Kg​</p>
+            <p class="text-yellow-300 font-semibold text-3xl">11,4 Kg​</p>
             <p>Produzidos por habitante​</p>
           </div>
           <div>
-            <p>5º​</p>
+            <p class="text-yellow-300 font-semibold text-3xl">5º​</p>
             <p>Maior produtor do mundo​</p>
           </div>
         </section>
@@ -81,7 +89,7 @@
         class="bg-green-dark text-white flex items-center self-center justify-center h-16"
       >
         <div>
-          <p class="">
+          <p class="text-xs">
             &copy; 2026 David Fernandes Valentim & Guilherme Lawisch Machado.
             Todos os direitos reservados.​
           </p>
