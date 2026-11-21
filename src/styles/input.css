@@ -5,7 +5,9 @@
   --color-green-light: #E7EFE0;
   --color-green-span: #3E6A1D;
   --color-yellow-text: #FFFF00;
-  --color-background: #E7EFE0;
+  --color-background: #EEFAE3;
+  --color-globo-icon: #81CC48;
+  --color-coracao-icon: #FFC000;
 }
 
 @layer components {
