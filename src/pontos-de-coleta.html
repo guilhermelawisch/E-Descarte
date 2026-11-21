@@ -16,6 +16,16 @@
         }
       }
     </script>
+    <script type="module" defer>
+      import {LeafletMap, TileLayer} from 'leaflet';
+
+      const map = new LeafletMap('map').setView([-27.10475917660405, -52.61430791086622], 13);
+
+      new TileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+    </script>
     <title>E-Descarte | PONTOS DE COLETA</title>
   </head>
   <body class="bg-background">
@@ -53,18 +63,40 @@
         </nav>
       </div>
     </header>
-    <main>
-      <div id="map" style="height: 600px"></div>
-      <script type="module">
-        import {LeafletMap, TileLayer} from 'leaflet';
-
-        const map = new LeafletMap('map').setView([-27.1153675,-52.7068365], 13);
-
-        new TileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 19,
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
-      </script>
+    <main class="mx-20 my-10 flex flex-col gap-10">
+      <section class="flex flex-col gap-4">
+        <h2 class="text-4xl font-semibold">PONTOS DE COLETA</h2>
+      </section>
+      <section class="grid grid-cols-2 gap-10">
+        <div class="flex flex-col gap-4">
+          <div>
+            <h4 class="text-2xl">SEU ELETRÔNICO TEM UM DESTINO CERTO</h4>
+          </div>
+          <div class="border rounded-md p-6 flex flex-col bg-background-card gap-4">
+            <p class="text-xl">Onde você quer descartar?</p>
+            <input type="text" name="" id="" class="border bg-background p-1 rounded-md">
+            <button class="bg-green-dark rounded-md text-white py-1 font-semibold hover:cursor-pointer hover:bg-green-span border border-black">BUSCAR</button>
+          </div>
+          <div class="">
+            <div class="flex flex-col gap-2">
+              <p class="text-2xl">SELECIONE O TIPO DO MATERIAL</p>
+              <label for="cel" class="hover:cursor-pointer">
+                <input type="checkbox" name="cel" id="cel" class="mr-2 text-xl" checked>Celulares e Tablets
+              </label>
+              <label for="bat" class="hover:cursor-pointer">
+                <input type="checkbox" name="bat" id="bat" class="mr-2 text-xl" checked>Baterias e Pilhas
+              </label>
+              <label for="com" class="hover:cursor-pointer">
+                <input type="checkbox" name="com" id="com" class="mr-2 text-xl" checked>Computadores e Notebooks
+            </label>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4 class="hidden">LOCALIZAÇÃO NO MAPA</h4>
+          <div id="map" class="w-full h-full"></div>
+        </div>
+      </section>
     </main>
     <footer
       class="footer"
