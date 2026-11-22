@@ -12,6 +12,7 @@
   --color-coracao-icon: #FFC000;
 }
 
+
 @layer components {
   .header {
     @apply bg-green-dark text-white grid grid-cols-2 px-20 h-20 items-center self-center
