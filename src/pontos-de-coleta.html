@@ -58,16 +58,16 @@
         </div>
       </div>
     </header>
-    <main class="mx-20 my-10 flex flex-col gap-10">
+    <main class="m-4 md:mx-20 md:my-10 flex flex-col gap-4 md:gap-10">
       <section class="flex flex-col gap-4">
         <h2 class="text-4xl font-semibold">PONTOS DE COLETA</h2>
       </section>
-      <section class="grid grid-cols-2 gap-10">
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div class="flex flex-col gap-4">
           <div>
             <h4 class="text-2xl">SEU ELETRÔNICO TEM UM DESTINO CERTO</h4>
           </div>
-          <div class="border rounded-md p-6 flex flex-col bg-background-card gap-4">
+          <div class="border rounded-md p-4 md:p-6 flex flex-col bg-background-card gap-2 md:gap-4">
             <p class="text-xl">Onde você quer descartar?</p>
             <input type="text" name="" id="" class="border bg-background p-1 rounded-md">
             <button class="bg-green-dark rounded-md text-white py-1 font-semibold hover:cursor-pointer hover:bg-green-span border border-black">BUSCAR</button>
@@ -87,9 +87,9 @@
             </div>
           </div>
         </div>
-        <div>
+        <div class="">
           <h4 class="hidden">LOCALIZAÇÃO NO MAPA</h4>
-          <div id="map" class="w-full h-full"></div>
+          <div id="map" class="w-full h-80 md:h-full"></div>
         </div>
       </section>
     </main>
