@@ -18,14 +18,17 @@
       }
     </script>
     <script type="module" defer>
-      import {LeafletMap, TileLayer} from 'leaflet';
+      import {LeafletMap, TileLayer, Marker} from 'leaflet';
 
-      const map = new LeafletMap('map').setView([-27.10475917660405, -52.61430791086622], 13);
+      const map = new LeafletMap('map').setView([-27.094317240710883, -52.61653255466672], 13);
 
       new TileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }).addTo(map);
+
+      new Marker([-27.0906941,-52.5973693]).addTo(map).bindPopup('<b>ECOPONTO</b><br>R. Sete de Setembro, 2063, Chapecó<br><a href="https://maps.app.goo.gl/R6RFS4VN1KrPgKBx5" target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a>')
+      new Marker([-27.0428104,-52.5833554]).addTo(map).bindPopup('<b>REC - Reciclagem de Eletrônicos Chapecó</b><br>Linha - Rodeio Bonito, Chapecó<br><a href="https://maps.app.goo.gl/QhtJT77NMPf6YPTJ7" target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a>')
     </script>
     <title>E-Descarte | PONTOS DE COLETA</title>
   </head>
