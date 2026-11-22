@@ -20,21 +20,20 @@
     <script type="module" defer>
       import {LeafletMap, TileLayer, Marker} from 'leaflet';
 
-      const map = new LeafletMap('map').setView([-27.094317240710883, -52.61653255466672], 13);
+      const map = new LeafletMap('map').setView([-27.092488134895806, -52.61948944038277], 13);
 
       new TileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }).addTo(map);
 
-      new Marker([-27.0906941,-52.5973693]).addTo(map).bindPopup('<b>ECOPONTO</b><br>R. Sete de Setembro, 2063, Chapecó<br><a href="https://maps.app.goo.gl/R6RFS4VN1KrPgKBx5" target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a>')
-      new Marker([-27.0428104,-52.5833554]).addTo(map).bindPopup('<b>REC - Reciclagem de Eletrônicos Chapecó</b><br>Linha - Rodeio Bonito, Chapecó<br><a href="https://maps.app.goo.gl/QhtJT77NMPf6YPTJ7" target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a>')
+      new Marker([-27.09061965736562, -52.59672265519143]).addTo(map).bindPopup('<b>EcoPonto SEINFRA</b><br>Secretaria de Infraestrutura Urbana (SEINFRA), na Rua Sete de Setembro, n° 2063-E, Presidente Médici<br>Horário: 7h30 às 11h30 - 13h às 17h (segunda a sábado)<br><a href="https://maps.app.goo.gl/bHqa9wCWT4RWMQQCA" target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a>')
+      new Marker([-27.09460042934747, -52.66182743959561]).addTo(map).bindPopup('<b>EcoPonto Efapi</b><br>Parque Tancredo de Almeida Neves (Parque da Efapi) / acesso pelo portão 02<br>Horário:  7h30 às 11h30 - 13h às 17h (segunda a sexta)<br><a href="https://maps.app.goo.gl/S2BCWfSqWerNhova7" target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a>')
+      new Marker([-27.08889668032321, -52.61632443377786]).addTo(map).bindPopup('<b>EcoPonto Seap</b><br>AV. Nereu Ramos, 1750-E - Passo dos Fortes / Chapecó/SC / 89805-100 ( Antigo Mercado público )<br>Horário: 7h30 às 11h30 e 13h às 17h (segunda a sexta)<br><a href="https://maps.app.goo.gl/AnUvScfvdMcvZ7si8" target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a>')
     </script>
     <script defer>
-      let menuOpen = false
       function toggleMenu() {
         document.querySelector('#menuMobile').classList.toggle('hidden');
-        console.log('test')
       }
     </script>
     <title>E-Descarte | PONTOS DE COLETA</title>

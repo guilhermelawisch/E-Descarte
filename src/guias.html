@@ -8,10 +8,44 @@
     <link href="./styles/output.css" rel="stylesheet" />
     <title>E-Descarte | GUIA DE DESCARTE</title>
     <script defer>
-      let menuOpen = false
+      let optionA = 1
+      let optionB = 1
       function toggleMenu() {
         document.querySelector('#menuMobile').classList.toggle('hidden');
-        console.log('test')
+      }
+      function changeGuia(op) {
+        if (op != optionA) {
+          optionTopOld = document.querySelector('#option'+optionA.toString())
+          optionTopOld.classList.remove('bg-globo-select');
+          optionTopOld.classList.add('bg-globo-icon');
+          optionTopNew = document.querySelector('#option'+op.toString())
+          optionTopNew.classList.remove('bg-globo-icon');
+          optionTopNew.classList.add('bg-globo-select');
+          elementOld = document.querySelector('#a'+optionA.toString()+'b'+optionB.toString())
+          elementOld.classList.toggle('hidden');
+          elementOld.classList.toggle('flex');
+          elementNew = document.querySelector('#a'+op.toString()+'b1')
+          elementNew.classList.toggle('hidden');
+          elementNew.classList.toggle('flex');
+          if ((optionA == 2 || op == 2) && optionA != op) {
+            document.querySelector('#c1').classList.toggle('hidden');
+            document.querySelector('#c2').classList.toggle('hidden');
+            document.querySelector('#c3').classList.toggle('hidden');
+            document.querySelector('#c4').classList.toggle('hidden');
+            document.querySelector('#c5').classList.toggle('hidden');
+          }
+          optionA = op
+          optionB = 1
+        }
+      }
+      function changeSubguia(op) {
+        elementOld = document.querySelector('#a'+optionA.toString()+'b'+optionB.toString())
+        elementOld.classList.toggle('hidden');
+        elementOld.classList.toggle('flex');
+        elementNew = document.querySelector('#a'+optionA.toString()+'b'+op.toString())
+        elementNew.classList.toggle('hidden');
+        elementNew.classList.toggle('flex');
+        optionB = op
       }
     </script>
   </head>
@@ -68,7 +102,7 @@
           GUIA DE DESCARTE
         </h2>
         <div class="flex gap-2 md:gap-4">
-          <div class="flex flex-col md:flex-row items-center text-center border rounded-xl bg-globo-select font-semibold py-1 px-2 md:pr-4 hover:cursor-pointer hover:bg-globo-select">
+          <div onclick="changeGuia(1)" id="option1" class="flex flex-col md:flex-row items-center text-center border rounded-xl bg-globo-select font-semibold py-1 px-2 md:pr-4 hover:cursor-pointer hover:bg-globo-select">
             <div>
               <img src="./assets/icons/celular.svg" alt="celular" class="size-10 md:size-12">
             </div>
@@ -77,7 +111,7 @@
               <h4 class="text-xs md:text-lg">Tablets</h4>
             </div>
           </div>
-          <div class="flex flex-col md:flex-row items-center text-center border rounded-xl bg-globo-icon font-semibold py-1 px-2 md:pr-4 hover:cursor-pointer hover:bg-globo-select">
+          <div onclick="changeGuia(2)" id="option2" class="flex flex-col md:flex-row items-center text-center border rounded-xl bg-globo-icon font-semibold py-1 px-2 md:pr-4 hover:cursor-pointer hover:bg-globo-select">
             <div>
               <img src="./assets/icons/bateria.svg" alt="bateria" class="size-10 md:size-12">
             </div>
@@ -86,7 +120,7 @@
               <h4 class="text-xs md:text-lg">Pilhas</h4>
             </div>
           </div>
-          <div class="flex flex-col md:flex-row items-center text-center border rounded-xl bg-globo-icon font-semibold py-1 md:pl-2 px-2 md:pr-4 md:gap-2 hover:cursor-pointer hover:bg-globo-select">
+          <div onclick="changeGuia(3)" id="option3" class="flex flex-col md:flex-row items-center text-center border rounded-xl bg-globo-icon font-semibold py-1 md:pl-2 px-2 md:pr-4 md:gap-2 hover:cursor-pointer hover:bg-globo-select">
             <div>
               <img src="./assets/icons/computador.svg" alt="computador" class="size-10 md:size-12">
             </div>
@@ -99,7 +133,7 @@
       </section>
       <section>
         <div class="flex flex-col gap-4 border rounded-xl bg-background-card p-4">
-          <div class="flex flex-col gap-4">
+          <div class="flex flex-col gap-4" id="a1b1">
             <div class="flex items-center gap-2">
               <div>
                 <img src="./assets/icons/celular.svg" alt="celular" class="size-10">
@@ -113,7 +147,7 @@
               <p><span class="font-semibold">Contatos e mensagens:</span> Verifique se o Backup de conversas (como Whatsapp) e a sincronização de contatos com suas contas estão atualizados ​</p>
             </div>
           </div>
-          <div class="hidden flex-col gap-4">
+          <div class="hidden flex-col gap-4" id="a1b2">
             <div class="flex items-center gap-2">
               <div>
                 <img src="./assets/icons/celular.svg" alt="celular" class="size-10">
@@ -126,7 +160,7 @@
               <p><span class="font-semibold">Desvincule as contas:</span> Evite que terceiros tenham acesso à sua conta, antes de descartar o dispositivo remova as contas e programas do sistema conectado (Google, iCloud, OneDrive ) encerre a seção e desvincule sua  conta, em navegadores faça logout de todas as contas (Google, bancos, redes sociais, e-mails) só apagar ou panas deletar arquivos ou formatar pode não impedir a recuperação dos seus dados, procure realizar esse procedimento usando softwares especializados evitando que terceiros tenham acesso a seus dados.​​​</p>
             </div>
           </div>
-          <div class="hidden flex-col gap-4">
+          <div class="hidden flex-col gap-4" id="a1b3">
             <div class="flex items-center gap-2">
               <div>
                 <img src="./assets/icons/celular.svg" alt="celular" class="size-10">
@@ -139,7 +173,7 @@
               <p><span class="font-semibold">Pontos de coleta:</span> Procure pontos de coleta específicos para lixo eletrônicos mantidos por cooperativas ou prefeituras, lojas de eletrônicos ou em pontos de logística reversa, esses dados estão presentes em nossa página poderá ser consultadas acessando o menu na página inicial.​​​</p>
             </div>
           </div>
-          <div class="hidden flex-col gap-4">
+          <div class="hidden flex-col gap-4" id="a2b1">
             <div class="flex items-center gap-2">
               <div>
                 <img src="./assets/icons/bateria.svg" alt="celular" class="size-10">
@@ -152,7 +186,7 @@
               <p><span class="font-semibold">Separação:</span> Nunca misture com o lixo comum ou reciclável tradicional, guarde pilhas e baterias em um recipiente de plástico ou vidro bem vedado, longe de umidade, sol direto e do alcance de crianças e animais. Evite perfurar ou pressionar , principalmente baterias para evitar acidentes ou curto-circuito.​​</p>
             </div>
           </div>
-          <div class="hidden flex-col gap-4">
+          <div class="hidden flex-col gap-4" id="a2b2">
             <div class="flex items-center gap-2">
               <div>
                 <img src="./assets/icons/bateria.svg" alt="celular" class="size-10">
@@ -165,7 +199,7 @@
               <p><span class="font-semibold">Descarte correto:</span> Destine o material separado para pontos de coletas. Pela legislação (Política Nacional de Resíduos Sólidos e Resolução CONAMA  nº 401/2008), fabricantes, importadores, distribuidores e comerciantes são obrigados a estruturar sistemas de logística reversa para esses produtos.​​​​</p>
             </div>
           </div>
-          <div class="hidden flex-col gap-4">
+          <div class="hidden flex-col gap-4" id="a3b1">
             <div class="flex items-center gap-2">
               <div>
                 <img src="./assets/icons/computador.svg" alt="celular" class="size-10">
@@ -179,7 +213,7 @@
               <p><span class="font-semibold">Licenças de Software:</span> Anote ou desvincule chaves de licença de programas pagos que você pretenda reinstalar em uma máquina nova.</p>
             </div>
           </div>
-          <div class="hidden flex-col gap-4">
+          <div class="hidden flex-col gap-4" id="a3b2">
             <div class="flex items-center gap-2">
               <div>
                 <img src="./assets/icons/computador.svg" alt="celular" class="size-10">
@@ -192,7 +226,7 @@
               <p><span class="font-semibold">Desvincule as contas:</span> Evite que terceiros tenham acesso à sua conta, antes de descartar o dispositivo remova as contas  e programas do sistema conectado (Google, iCloud, OneDrive ) encerre a seção e desvincule sua  conta, em navegadores faça logout de todas as contas (Google, bancos, redes sociais, e-mails) só apagar ou panas deletar arquivos ou formatar pode não impedir a recuperação dos seus dados, procure realizar esse procedimento usando softwares especializados evitando que terceiros tenham acesso a seus dados.​​​</p>
             </div>
           </div>
-          <div class="hidden flex-col gap-4">
+          <div class="hidden flex-col gap-4" id="a3b3">
             <div class="flex items-center gap-2">
               <div>
                 <img src="./assets/icons/computador.svg" alt="celular" class="size-10">
@@ -207,29 +241,29 @@
           </div>
           <hr>
           <div class="flex flex-col md:flex-row gap-2 md:gap-10">
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2" id="c1">
               <label for="button1" class="hover:underline hover:cursor-pointer">
-                <button id="button1" name="button1" class="bg-globo-icon rounded-full size-8 text-black mr-2 hover:cursor-pointer">1</button>SALVAMENTO DE DADOS
+                <button onclick="changeSubguia(1)" id="button1" name="button1" class="bg-green-dark rounded-full size-8 text-white mr-2 hover:cursor-pointer">1</button>SALVAMENTO DE DADOS
               </label>
             </div>
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2" id="c2">
               <label for="button2" class="hover:underline hover:cursor-pointer">
-                <button id="button2" name="button2" class="bg-green-dark rounded-full size-8 text-white mr-2 hover:cursor-pointer">2</button>PROTEÇÃO DE DADOS
+                <button onclick="changeSubguia(2)" id="button2" name="button2" class="bg-green-dark rounded-full size-8 text-white mr-2 hover:cursor-pointer">2</button>PROTEÇÃO DE DADOS
               </label>
             </div>
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2" id="c3">
               <label for="button3" class="hover:underline hover:cursor-pointer">
-                <button id="button3" name="button3" class="bg-green-dark rounded-full size-8 text-white mr-2 hover:cursor-pointer">3</button>DESCARTE CORRETO
+                <button onclick="changeSubguia(3)" id="button3" name="button3" class="bg-green-dark rounded-full size-8 text-white mr-2 hover:cursor-pointer">3</button>DESCARTE CORRETO
               </label>
             </div>
-            <div class="hidden items-center gap-2">
+            <div class="hidden items-center gap-2" id="c4">
               <label for="button4" class="hover:underline hover:cursor-pointer">
-                <button id="button4" name="button4" class="bg-green-dark rounded-full size-8 text-white mr-2 hover:cursor-pointer">1</button>SEPARAÇÃO E ARMAZENAMENTO
+                <button onclick="changeSubguia(1)" id="button4" name="button4" class="bg-green-dark rounded-full size-8 text-white mr-2 hover:cursor-pointer">1</button>SEPARAÇÃO E ARMAZENAMENTO
               </label>
             </div>
-            <div class="hidden items-center gap-2">
-              <label for="button4" class="hover:underline hover:cursor-pointer">
-                <button id="button4" name="button4" class="bg-green-dark rounded-full size-8 text-white mr-2 hover:cursor-pointer">2</button>DESCARTE CORRETO
+            <div class="hidden items-center gap-2" id="c5">
+              <label for="button5" class="hover:underline hover:cursor-pointer">
+                <button onclick="changeSubguia(2)" id="button5" name="button5" class="bg-green-dark rounded-full size-8 text-white mr-2 hover:cursor-pointer">2</button>DESCARTE CORRETO
               </label>
             </div>
           </div>
