@@ -1,6 +1,8 @@
 # E-Descarte
 A plataforma fornece orientações claras de descarte e conecta o usuário aos pontos de entrega.
 
+Mapa funciona somente se abrir utilizando Live Server
+
 Referencia para rodar
 'https://tailwindcss.com/docs/installation/tailwind-cli'
 
