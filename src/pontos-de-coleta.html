@@ -30,9 +30,34 @@
       new Marker([-27.0906941,-52.5973693]).addTo(map).bindPopup('<b>ECOPONTO</b><br>R. Sete de Setembro, 2063, Chapecó<br><a href="https://maps.app.goo.gl/R6RFS4VN1KrPgKBx5" target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a>')
       new Marker([-27.0428104,-52.5833554]).addTo(map).bindPopup('<b>REC - Reciclagem de Eletrônicos Chapecó</b><br>Linha - Rodeio Bonito, Chapecó<br><a href="https://maps.app.goo.gl/QhtJT77NMPf6YPTJ7" target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a>')
     </script>
+    <script defer>
+      let menuOpen = false
+      function toggleMenu() {
+        document.querySelector('#menuMobile').classList.toggle('hidden');
+        console.log('test')
+      }
+    </script>
     <title>E-Descarte | PONTOS DE COLETA</title>
   </head>
   <body class="bg-background">
+    <div class="hidden absolute w-full h-full bg-green-dark" id="menuMobile">
+      <div class="text-end pt-7 pr-4">
+        <i class="fa-solid fa-xmark text-white text-2xl" onclick="toggleMenu()"></i>
+      </div>
+      <nav class="">
+        <ul class="flex flex-col-reverse mt-20 gap-10 items-center text-white">
+          <li class="hover:underline">
+            <a href="./guias.html">GUIA DE DESCARTE</a>
+          </li>
+          <li class="hover:underline">
+            <a href="./pontos-de-coleta.html">PONTOS DE COLETA</a>
+          </li>
+          <li class="hover:underline">
+            <a href="./problema.html">PROBLEMA</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
     <header class="header">
       <a href="./index.html">
         <div class="flex flex-row flex-auto">
@@ -57,7 +82,7 @@
           </ul>
         </nav>
         <div class="md:hidden text-end">
-          <i class="fas fa-bars text-2xl"></i>
+          <i class="fas fa-bars text-2xl" onclick="toggleMenu()"></i>
         </div>
       </div>
     </header>
