@@ -15,10 +15,10 @@
 
 @layer components {
   .header {
-    @apply bg-green-dark text-white grid grid-cols-2 px-20 h-20 items-center self-center
+    @apply bg-green-dark text-white grid grid-cols-2 px-4 md:px-4 lg:px-10 xl:px-20 h-20 items-center self-center font-semibold
   }
 
   .footer {
-    @apply bg-green-dark text-white flex items-center self-center justify-center h-16
+    @apply bg-green-dark text-white flex items-center self-center justify-center h-16 px-4
   }
 }

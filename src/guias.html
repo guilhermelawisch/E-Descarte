@@ -4,42 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./assets/icons/favicon.ico" sizes="any" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link href="./styles/output.css" rel="stylesheet" />
     <title>E-Descarte | GUIA DE DESCARTE</title>
   </head>
   <body class="bg-background">
-    <header
-      class="header"
-    >
+    <header class="header">
       <a href="./index.html">
         <div class="flex flex-row flex-auto">
-          <img
-            src="./assets/icons/lixeira.svg"
-            alt="imagem lixeira"
-            width="48"
-          />
-          <h1 class="text-3xl font-bold items-center self-center">
+          <img src="./assets/icons/lixeira.svg" alt="imagem lixeira" class="w-10 md:w-14"/>
+          <h1 class="text-xl md:text-3xl font-bold items-center self-center">
             E-Descarte
           </h1>
         </div>
       </a>
       <div>
-        <nav>
-          <ul class="flex flex-row justify-evenly">
+        <nav class="hidden md:block">
+          <ul class="flex flex-row-reverse md:gap-2 xl:gap-6 items-end">
             <li class="hover:underline">
-              <a href="./problema.html">PROBLEMA</a>
+              <a href="./guias.html">GUIA DE DESCARTE</a>
             </li>
             <li class="hover:underline">
               <a href="./pontos-de-coleta.html">PONTOS DE COLETA</a>
             </li>
             <li class="hover:underline">
-              <a href="./guias.html">GUIA DE DESCARTE</a>
-            </li>
-            <li class="hover:underline">
-              <a href="./sobre-o-projeto.html">SOBRE O PROJETO</a>
+              <a href="./problema.html">PROBLEMA</a>
             </li>
           </ul>
         </nav>
+        <div class="md:hidden text-end">
+          <i class="fas fa-bars text-2xl"></i>
+        </div>
       </div>
     </header>
     <main class="mx-20 my-10 flex flex-col gap-10">
